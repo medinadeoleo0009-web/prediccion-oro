@@ -8,7 +8,9 @@ Original file is located at
 """
 
 # Paso 1: Instalar librerías necesarias
-!pip install yfinance scikit-learn
+import yfinance as yf
+import pandas as pd
+from sklearn.linear_model import LinearRegression
 
 # Paso 2: Importar librerías y descargar datos históricos del oro
 import yfinance as yf
