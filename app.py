@@ -16,8 +16,8 @@ def compute_rsi(data, window=14):
 
 gold['RSI'] = compute_rsi(gold['Close'])
 
-gold['Target'] = gold['Close'].shift(-1)  
-gold = gold.dropna()  
+gold['Target'] = gold['Close'].shift(-1)
+gold = gold.dropna()
 
 X = gold[['Close', 'MA50', 'RSI']]
 y = gold['Target']
@@ -30,4 +30,3 @@ prediction = model.predict(last_row)[0]
 
 print("Precio actual:", gold['Close'].iloc[-1])
 print("Predicción para mañana:", prediction)
-
