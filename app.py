@@ -33,4 +33,4 @@ prediction = model.predict(last_row)[0]
 
 # Paso 2: métricas en pantalla
 st.metric("Precio actual", f"${gold['Close'].iloc[-1]:.2f}")
-st.metric("Predicción para mañana", f"${prediction:.2f}"
+st.metric("Predicción para mañana", f"${prediction:.2f}")
