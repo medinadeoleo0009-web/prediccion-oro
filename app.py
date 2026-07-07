@@ -1,9 +1,4 @@
-# -*- coding: utf-8 -*-
 
-    https://colab.research.google.com/drive/1SPc2gcFSycSj7dn_JnuaCNnSqdLjxOGF
-"""
-
-# Paso 1: Instalar librerías necesarias
 import yfinance as yf
 import pandas as pd
 from sklearn.linear_model import LinearRegression
