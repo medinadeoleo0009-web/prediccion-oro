@@ -2,6 +2,9 @@ import yfinance as yf
 import pandas as pd
 from sklearn.linear_model import LinearRegression
 
+st.title("Predicción del precio del oro")
+st.write("Este dashboard muestra el precio actual del oro y una predicción para mañana usando regresión lineal.")
+
 gold = yf.download("GC=F", start="2015-01-01", end="2026-01-01")
 
 gold['MA50'] = gold['Close'].rolling(50).mean()
@@ -27,5 +30,5 @@ model.fit(X, y)
 last_row = X.iloc[-1].values.reshape(1, -1)
 prediction = model.predict(last_row)[0]
 
-print("Precio actual:", gold['Close'].iloc[-1])
-print("Predicción para mañana:", prediction)
+st.metric("Precio actual", f"${gold['Close'].iloc[-1]:.2f}")
+st.metric("Predicción para mañana", f"${prediction:.2f}")
